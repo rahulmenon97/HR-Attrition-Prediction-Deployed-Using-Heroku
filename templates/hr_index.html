@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict HR Attrition</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Age" placeholder="Age" required="required" />
+        <input type="text" name="BusinessTravel" placeholder="Business Travel" required="required" />
+	<input type="text" name="DailyRate" placeholder="Daily Rate" required="required" />
+        <input type="text" name="Department" placeholder="Department" required="required" />
+	<input type="text" name="DistanceFromHome" placeholder="Distance From Home" required="required" />
+        <input type="text" name="EducationField" placeholder="Education Field" required="required" />
+	<input type="text" name="EmployeeCount" placeholder="Employee Count" required="required" />
+        <input type="text" name="EmployeeNumber" placeholder="Employee Number" required="required" />
+	<input type="text" name="EnvironmentSatisfaction" placeholder="Environment Satisfaction" required="required" />
+        <input type="text" name="Gender" placeholder="Gender" required="required" />
+	<input type="text" name="HourlyRate" placeholder="Hourly Rate" required="required" />
+        <input type="text" name="JobInvolvement" placeholder="Job Involvement" required="required" />
+   	<input type="text" name="JobLevel" placeholder="Job Level" required="required" />
+        <input type="text" name="JobRole" placeholder="Job Role" required="required" />
+	<input type="text" name="JobSatisfaction" placeholder="Job Satisfaction" required="required" />
+        <input type="text" name="MaritalStatus" placeholder="Marital Status" required="required" />
+	<input type="text" name="MonthlyIncome" placeholder="Monthly Income" required="required" />
+        <input type="text" name="MonthlyRate" placeholder="Monthly Rate" required="required" />
+	<input type="text" name="NumCompaniesWorked" placeholder="Number of Companies Worked" required="required" />
+        <input type="text" name="Over18" placeholder="Above 18?" required="required" />
+	<input type="text" name="OverTime" placeholder="Over Time" required="required" />
+        <input type="text" name="PercentSalaryHike" placeholder="Percent Salary Hike" required="required" />
+	<input type="text" name="PerformanceRating" placeholder="Performance Rating" required="required" />
+        <input type="text" name="RelationshipSatisfaction" placeholder="Relationship Satisfaction" required="required" />
+   	<input type="text" name="StandardHours" placeholder="Standard Hours" required="required" />
+        <input type="text" name="StockOptionLevel" placeholder="Stock Option Level" required="required" />
+	<input type="text" name="TotalWorkingYears" placeholder="Total Working Years" required="required" />
+        <input type="text" name="TrainingTimesLastYear" placeholder="Training Times Last Year" required="required" />
+	<input type="text" name="WorkLifeBalance" placeholder="Work Life Balance" required="required" />
+        <input type="text" name="YearsAtCompany" placeholder="Years At Company" required="required" />
+	<input type="text" name="YearsInCurrentRole" placeholder="Years In Current Role" required="required" />
+        <input type="text" name="YearsSinceLastPromotion" placeholder="Years Since Last Promotion" required="required" />
+		<input type="text" name="YearsWithCurrManager" placeholder="Years With Current Manager" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
